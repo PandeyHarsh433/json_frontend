@@ -9,7 +9,7 @@ import RenderSelect from '../components/RenderSelect';
 import RenderSwitch from '../components/RenderSwitch';
 
 function renderForm(uiSchema) {
-    
+
     let sortedUiSchema = uiSchema.sort((a, b) => {
         return a.sort - b.sort;
     });
@@ -17,8 +17,7 @@ function renderForm(uiSchema) {
     let hasOptionalFields = false;
 
     let formComponents = sortedUiSchema.map((item) => {
-        
-        // Check if the item is required, by checking if it has a validate object and if it has a required property
+
         const isRequired = item.validate && item.validate.required;
         // If the item is not required, set hasOptionalFields to true
         if (!isRequired) {
